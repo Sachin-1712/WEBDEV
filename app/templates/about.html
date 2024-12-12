@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/other.css') }}">
+<div class="container-wrapper container">
+  <div class="section section--static">
+    <div id="shopify-section-page-about" class="shopify-section section-about">
+      <div class="section__content">
+        <div id="about-us-wrapper" class="site-flexbox grid grid--gutters">
+          <div class="column50" style="padding-right: 20px; text-align: left;">
+            <img src="https://i.pinimg.com/736x/b8/b1/ec/b8b1eccf5bd7f066af157b2b13c97fde.jpg"
+              alt="zzz">
+          </div>
+          <div class="column50" style="padding-right: 20px; text-align: left;">
+            <h1 style="display: none;">About</h1>
+            <p>Crescendo is from Leeds, UK. With a strong focus on simple yet powerful design, we are driven to
+              create timeless work by portraying an aesthetic that is uniquely our own.</p>
+              <p class="here-btn">Click <a href="{{ url_for('shop') }}">here</a> to shop</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

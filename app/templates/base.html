@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRESCENDO</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body class="{% if 'logged_in' in session %}logged-in{% endif %}"> 
+
+    
+    <section id="header">
+
+        <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="{{ url_for('index') }}">HOME</a>
+            <a href="{{ url_for('shop') }}">SHOP</a>
+            <a href="{{ url_for('lookbook') }}">LOOKBOOK</a>
+            <a href="{{ url_for('about') }}">ABOUT</a>
+            <a href="{{ url_for('profile') }}">LOGIN</a>
+            <a href="{{ url_for('messages') }}">MESSAGES</a> 
+            <!-- check for flash messages -->
+          </div>
+          
+          <div id="main">
+            <button class="openbtn" onclick="openNav()">&#9776;</button> 
+          </div>
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" 
+    
+            crossorigin="anonymous"></script>
+        
+        <div>
+            <ul id="navbar">
+    
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('search_results') }}">
+                        <svg width="17" height="19" viewBox="0 0 17 19" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            class="icon-search-navbar">
+                            <circle cx="6.66667" cy="6.66667" r="5.66667" stroke="black"></circle>
+                            <path d="M10.0664 11.1992L15.1664 17.9992" stroke="black"></path>
+                        </svg>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('profile') }}">
+                        <svg width="16" height="19" viewBox="0 0 16 19" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            class="icon-profile-navbar">
+                            <circle cx="7.875" cy="4.375" r="3.375" stroke="black"></circle>
+                            <path
+                                d="M15.2096 18.5H0.540399L1.01913 12.3449C1.10012 11.3036 1.96869 10.5 3.01311 10.5H12.7369C13.7813 10.5 14.6499 11.3036 14.7309 12.3449L15.2096 18.5Z"
+                                stroke="black"></path>
+                        </svg>
+                    </a>
+                    {% if 'email' in session %}
+                    <span class="logged-in-indicator"></span>
+                    {% endif %}
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('favorites') }}" class="nav-link favorite-count">
+                        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-[20px] shrink-0 text-black desktop:mr-0.5" data-cy="mega-menu-favourites-3">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 6.67c-.94-2.69-2.5-4.03-4.67-4.03-4.01 0-5.48 4.5-3.05 7.3 1.63 1.88 4.28 4.64 7.96 8.3 3.42-3.64 5.94-6.41 7.56-8.3 2.43-2.82.96-7.3-2.66-7.3-2.42 0-4.13 1.34-5.14 4.03Z" fill="#EB584E" stroke="currentColor"></path>
+                        </svg>
+                        <span id="favorite-product-count">0</span> 
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('cart') }}">
+                        <svg width="18" height="21" viewBox="0 0 18 21" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            class="icon-cart">
+                            <path d="M2 5H16L17 20H1L2 5Z" stroke="#181818"></path>
+                            <path d="M6 5V4C6 2.34315 7.34315 1 9 1C10.6569 1 12 2.34315 12 4V5" stroke="#181818"></path>
+                        </svg>
+                    </a>
+                </li>
+    
+            </ul>
+        </div>
+    </section>
+    
+    {% block navbar %}{% endblock %}
+    <div id="content">
+        {% block content %}{% endblock %}
+      </div>
+      <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

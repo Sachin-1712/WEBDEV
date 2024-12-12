@@ -1,0 +1,93 @@
+
+body {
+    font-family: DIN W01 Regular, Arial, sans-serif;
+    margin: 0;
+}
+
+h2 { /* Target h2 headings */
+
+    text-transform: uppercase;
+    font-family: DIN W01 Regular, Arial, sans-serif;
+    color: #181818;
+    letter-spacing: .1em;
+    font-size: .75rem;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    padding: 11.76471px 0;
+    width: 100%;
+    background: none;
+    line-height: 1;
+}
+
+.search-results p {  /* Target p tags within the search results */
+    text-transform: uppercase;
+    font-family: DIN W01 Regular, Arial, sans-serif;
+    color: #181818;
+    letter-spacing: .1em;
+    font-size: .75rem;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    padding: 11.76471px 0;
+    width: 100%;
+    background: none;
+    line-height: 1;
+}
+
+.search-container {
+    position: relative;
+    font-family: DIN W01 Regular, Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.search-icon {
+    cursor: pointer;
+}
+
+.search-form-container {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 10;
+    background-color: white;
+    width: 3000px; /* Adjust width as needed */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+.search-form-container.show {
+    display: block;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-field {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn-search {
+    background-color: transparent;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.search-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: url('http://www.w3.org/2000/svg') no-repeat center;
+    width: 16px;
+    height: 16px;
+    border: none;
+    cursor: pointer;
+}

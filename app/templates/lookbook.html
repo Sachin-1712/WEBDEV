@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/other.css') }}">
+<div class="lookbook-container">
+  <div class="lookbook-grid">
+    <!-- Add your images here -->
+    <div class="lookbook-item">
+      <img
+        src="https://media.weekday.com/static/products/d5/0e/d50e9b1f872ce7921283929482250bbc211c48fb_lg-1.jpg?imwidth=768"
+        alt="Look 1">
+    </div>
+    <div class="lookbook-item">
+      <img
+        src="https://media.weekday.com/static/products/97/20/97201f7d4879e166bda8d99e6b7754ddc6dd6f63_lg-1.jpg?imwidth=768"
+        alt="Look 2">
+    </div>
+    <div class="lookbook-item">
+      <img
+        src="https://media.weekday.com/static/products/f5/44/f5440726f394c1f2d7910494a95ee6a5cd0a4a0f_lg-1.jpg?imwidth=768"
+        alt="Look 3">
+    </div>
+    <div class="lookbook-item">
+        <img
+          src="https://media.weekday.com/static/products/5f/d1/5fd13e28ca3fe922694f523e47e3e0fb1fd02b4d_lg-1.jpg?imwidth=1024"
+          alt="Look 4">
+      </div>
+      <div class="lookbook-item">
+        <img
+          src="https://media.weekday.com/static/products/74/b8/74b871a8b94632846b57d49a8e82dfdad860dee6_lg-1.jpg?imwidth=1024"
+          alt="Look 5">
+      </div>
+      <div class="lookbook-item">
+        <img
+          src="https://media.weekday.com/static/products/e4/2e/e42e3ad1799e10e046556ebf75941a2d10f9584e_lg-1.jpg?imwidth=1024"
+          alt="Look 6">
+      </div>
+    <!-- Add more image items as needed -->
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,200 @@
+/* General Page Styles */
+body {
+    font-family: DIN W01 Regular, Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Navbar Styles */
+.navbar-toggler-icon {
+    color: #333;
+}
+
+.navbar {
+    background-color: #fff;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.navbar .navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0 auto;
+}
+
+.container.d-flex.justify-content-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Product Card Styles */
+.card {
+    border: none;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+    height: 450px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+.card-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute content evenly */
+    height: 100%; /* Make all card bodies the same height */
+}
+
+
+
+/* Title, price, and text spacing consistency */
+.card-title,
+.card-price,
+.card-text {
+    margin-bottom: 10px; /* Ensure equal spacing */
+}
+
+.card-body .btn-primary {
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    direction: inherit;
+    box-sizing: border-box;
+    line-height: 1.15;
+    overflow: visible;
+    outline: 0 none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    padding: 10px 20px;
+    font-family: DIN W01 Regular, Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 0;
+    font-weight: 400;
+    transition: all .4s ease-in-out;
+    background: #181818;
+    color: #fff;
+    max-width: 100%;
+    cursor: pointer;
+    font-size: 10px;
+    min-height: 40px;
+    margin-top: auto; /* Push button to bottom */
+}
+
+.card-body .btn-primary:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.card-title {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.card-price {
+    font-size: 0.79rem;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+/* Favorite Button */
+.favorite-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 0;
+    z-index: 2;
+}
+
+.favorite-button svg {
+    width: 24px;
+    height: 24px;
+    stroke: black;
+    fill: none;
+    transition: fill 0.3s ease, stroke 0.3s ease;
+}
+
+.favorite-button.active svg {
+    fill: #EB584E;
+    stroke: #EB584E;
+}
+
+.card.product {
+    position: relative;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .card-img-top {
+        height: 200px;
+    }
+}
+
+.btn-primary{
+
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    direction: inherit;
+    box-sizing: border-box;
+    line-height: 1.15;
+    overflow: visible;
+    outline: 0 none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
+    padding: 10px 20px;
+    font-family: DIN W01 Regular, Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    width: 30%;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 0;
+    font-weight: 400;
+    transition: all .4s ease-in-out;
+    background: #181818;
+    color: #fff;
+    max-width: 100%;
+    cursor: pointer;
+    font-size: 10px;
+    min-height: 40px;
+}

@@ -1,0 +1,226 @@
+/* General Reset */
+
+body {
+  font-family: var(--font-roboto), var(--font-roboto-condensed), var(--font-inter), sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(238, 238, 210);
+  /* Add this to prevent horizontal scrollbar */
+  overflow-x: hidden; 
+}
+
+.navbar {
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-weight: bold;
+  text-align: center;
+}
+
+.navbar-toggler {
+  display: block; /* Ensure the hamburger menu is always visible */
+  position: absolute; /* Position it absolutely */
+  left: 10px; /* Adjust as needed */
+  top: 10px; /* Adjust as needed */
+}
+
+.jumbotron {
+  background-color: #ffffff;
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  border-radius: 0.3rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  max-width: 960px;
+  margin: 2rem auto;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.openbtn {
+  font-size: 24px; /* Adjust the size as needed */
+  padding: 0px 5px; /* Add some padding */
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: opacity 0.5s ease; 
+}
+.openbtn:focus {
+  outline: none; /* Remove the default outline */
+  /* Add any custom styles you want, e.g.: */
+
+}
+
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+.video-container {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 80px;
+  background: #e0e0e0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+
+}
+#header #navbar {
+  -webkit-text-size-adjust: 100%;
+  font-family: Sohne, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.41;
+  letter-spacing: .05em;
+  color: #181818;
+  -webkit-font-smoothing: antialiased;
+  font-size: .75rem;
+  box-sizing: border-box;
+  display: flex !important;
+  justify-content: space-between !important;
+  padding-top: 20px;
+  height: 100% !important;
+}
+#header #navbar li{
+  list-style: none;
+  padding: 0 20px;
+}
+
+#header #navbar li a{
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  color: black;
+  transition: 0.3s ease;
+}
+
+#header #navbar li a:hover{
+color: rgb(0, 0, 0);
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Optional dark overlay */
+  z-index: 1;
+}
+
+.branding {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+
+.branding h1 {
+  font-family: 'Arial', sans-serif;
+  font-size: 3rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.branding p {
+  margin-top: 10px;
+  font-family: 'Arial', sans-serif;
+  font-size: 1rem;
+}
+
+.logged-in-indicator {
+  display: none; /* Hide the indicator by default */
+  width: 8px;
+  height: 8px;
+  margin-bottom: 3px;
+  background-color: #41bb45;
+  border-radius: 50%;
+  position: relative;
+  top: -30px;
+  left: 30px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+body.logged-in .logged-in-indicator { /* Show the indicator when logged in */
+  display: block;
+}
+
+.favorite-count {
+  display: inline-flex; 
+  align-items: center; 
+}
+
+.favorite-count svg {
+  margin-right: 5px; 
+}
+
+.favorite-count #favorite-product-count {
+  margin-left: 0px;
+  position: relative; /* Allow positioning relative to the icon */
+  left: 30px; /* Adjust left position to move it to the right */
+  bottom: 24px; /* Adjust vertical position to align with the icon */
+}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <title>Search Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/search.css') }}">
+
+    <div class="search-container"> 
+        <form action="{{ url_for('search_results') }}" method="GET" class="search-form"> 
+            <input type="text" name="q" class="search-field" placeholder="" value="{{ query }}"> 
+            <button type="submit" class="btn-search">
+                <i class="fas fa-search"></i> 
+            </button>
+        </form>
+    </div>
+
+    {% if query %} 
+
+    {% if results %}
+    <h2>search results for "{{ query }}"</h2> 
+        <ul>
+            {% for result in results %}
+                <li>
+                    <h5><a href="{{ url_for('shop', item_id=result.id) }}">{{ result.name }}</a></h3>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <h2>could not find anything for "{{ query }}"</h2>
+    {% endif %}
+{% endif %} 
+{% endblock %}

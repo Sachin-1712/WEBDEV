@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/cart.css') }}">
+
+<div class="cart-container">
+    <h1 class="cart-title">My Cart</h1>
+    
+    {% if cart_items %}
+    <table class="cart-table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Total</th>
+                <th class="a"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cart_item in cart_items %}
+            <tr class="cart-item">
+                <td class="cart-product">
+                    <img src="{{ cart_item.item.images|replace('[', '')|replace(']', '')|replace('"', '') }}" 
+                    alt="{{ cart_item.item.name }}" class="product-img">
+                    <div class="product-details">
+                        <h5>{{ cart_item.item.name }}</h5>
+                        <p>{{ cart_item.item.description }}</p>
+                    </div>
+                </td>
+                <td class="cart-quantity">
+                    <form method="POST" action="{{ url_for('update_cart', item_id=cart_item.item.id) }}"> 
+                        <label class="qtylabel"><small>QTY</small></label>
+                        <input type="number" class="cart-quantity quantity-input" name="quantity" 
+                               value="{{ cart_item.quantity }}" min="1" data-cart-id="{{ cart_item.id }}">
+                        <button type="submit" class="btn-update">Update</button> 
+                        </div>
+                    </form>
+                    {% if cart_item.quantity >= cart_item.item.stock %}
+                        <div class="limit-message">
+                            <p>LIMIT EXCEEDED FOR THIS ITEM</p>
+                            <p>You have reached the maximum number of the same item for your bag.</p>
+                        </div>
+                    {% endif %}
+                </td>
+                <td class="cart-price">{{ cart_item.item.price }} GBP</td>
+                <td class="cart-total">{{ (cart_item.item.price * cart_item.quantity)|round(2) }} GBP</td>
+                <td>
+                    <form action="{{ url_for('remove_from_cart', cart_id=cart_item.id) }}" method="POST">
+                        <button type="submit" class="btn-remove">Remove</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="cart-summary">
+        <h3>SUBTOTAL:</h3>
+        <p id="cart-subtotal">{{ cart_subtotal }} GBP</p> 
+        <form action="{{ url_for('checkout') }}" method="POST">
+            <button type="submit" class="btn btn-primary">Checkout</button>
+        </form>
+    </div>
+    {% else %}
+    <div class="empty-cart">
+        <p>Your cart is currently empty.</p>
+        <a href="{{ url_for('shop') }}" class="btn btn-primary">Shop Now</a>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

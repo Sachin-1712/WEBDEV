@@ -1,0 +1,189 @@
+/* About Page Styles */
+
+.container-wrapper {
+    -webkit-text-size-adjust: 100%;
+    font-family: Sohne, Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.41;
+    letter-spacing: .05em;
+    color: #181818;
+    -webkit-font-smoothing: antialiased;
+    font-size: .75rem;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 20px;
+    position: relative;
+    margin: 0 auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 61px !important;
+  }
+  
+  /* Lookbook Page Styles */
+  .lookbook-container {
+    -webkit-text-size-adjust: 100%;
+    --swiper-theme-color: #181818;
+    --swiper-navigation-size: 19px;
+    --color-black: #000;
+    --color-white: #fff;
+    --color-dark: #181818;
+    --bg-white: #fff;
+    --base-font-size-mobile: .875rem;
+    --base-font-size: .75rem;
+    --base-font-weight: 400;
+    --base-line-height: 1.41;
+    --base-letter-spacing: .05em;
+    --body-color: #181818;
+    --spacer: 20px;
+    --border: #E5E5E5;
+    --vh: 8.11px;
+    font-family: Sohne, Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.41;
+    letter-spacing: .05em;
+    color: #181818;
+    -webkit-font-smoothing: antialiased;
+    font-size: .75rem;
+    pointer-events: all;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    opacity: 1;
+    transition: opacity .45s;
+    margin-top: 0;
+    min-height: 350px !important;
+    position: relative;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    will-change: opacity;
+    display: block;
+    padding-left: 100px !important;
+    padding-right: 100px !important;
+    height: auto !important;
+    max-height: 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 14px !important;
+  }
+  
+  .lookbook-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+  }
+  
+  .lookbook-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .lookbook-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .lookbook-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .lookbook-item img:hover {
+    transform: scale(1.05);
+  }
+
+  
+  #about-us-wrapper {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Vertically align image and text */
+  }
+  
+  #about-us-wrapper .column50 {
+    -webkit-text-size-adjust: 100%;
+    font-family: Sohne, Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.41;
+    letter-spacing: .05em;
+    color: #181818;
+    -webkit-font-smoothing: antialiased;
+    font-size: .75rem;
+    box-sizing: border-box;
+    flex: 0 0 30%; /* Distribute space: 30% for image, 70% for text */
+    max-width: 50%;
+    padding: 0 20px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+  }
+  
+  #about-us-wrapper .column50 img {
+    max-width: 100%; /* Ensure image doesn't overflow its container */
+    height: auto;
+  }
+  
+  #about-us-wrapper .column50:first-child { /* Target the image container */
+    flex: 0 0 50%; /* Adjust space distribution for the image */
+    max-width: 40%;
+  }
+  
+  #about-us-wrapper .column50:last-child { /* Target the text container */
+    flex: 0 0 50%; /* Adjust space distribution for the text */
+    max-width: 60%;
+  }
+
+
+
+
+.order-history {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+  }
+  
+  .order-history li {
+    margin-bottom: 20px;
+  }
+  
+  .order-history li>div { /* Style the container for each order */
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .order-history strong {
+    font-weight: bold;
+  }
+  
+  .order-history ul { /* Style for the item list within each order */
+    list-style: none;
+    padding: 0;
+  }
+  
+  .order-history li {
+    margin-bottom: 10px;
+  }
+  
+  .cancel-order-btn {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #dc3545; /* Red background for cancel button */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  .cancel-order-btn:hover {
+    background-color: #c82333; /* Darker red on hover */
+  }

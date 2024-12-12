@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/myorders.css') }}">
+
+<div id="order-history-container"> </div>
+    <h3 id="order-history-heading">Order History</h3>
+    {% if orders %}
+        <ul id="order-list">
+            {% for order in orders %}
+            <li class="order-item">
+                <div class="order-details">
+                    <strong>Order #{{ order.id }}</strong> - {{ order.order_date.strftime('%Y-%m-%d %H:%M:%S') }}<br>
+                    Status: {{ order.status }}<br>
+                    <strong>Items:</strong>
+                    <ul class="order-items-list">
+                        {% for detail in order.order_details %}
+                        <li>{{ detail.item.name }} (x{{ detail.quantity }}) - £{{ detail.item.price * detail.quantity }}</li>
+                        {% endfor %}
+                    </ul>
+                    <button class="cancel-order-btn" data-order-id="{{ order.id }}">Cancel Order</button>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>You have no orders yet.</p>
+    {% endif %}
+</div>
+{% endblock %}
